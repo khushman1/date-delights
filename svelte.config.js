@@ -10,16 +10,10 @@ const config = {
 	kit: {
 		adapter: adapter({
 			strict: false,
-			pages: 'docs',
-			assets: 'docs/static',
-			fallback: 'index.html',
-			precompress: false
+			pages: 'docs'
 		}),
 		paths: {
 			base: process.env.BASE_PATH
-		},
-		prerender: {
-			handleHttpError: 'warn'
 		}
 	}
 };
