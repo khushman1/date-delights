@@ -9,9 +9,9 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		paths: {
-			base: '/date-delights'
-		}
+		// paths: {
+		// 	base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
+		// }
 	}
 };
 
