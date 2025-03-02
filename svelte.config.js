@@ -9,7 +9,7 @@ const config = {
 		adapter: adapter({
 			strict: false, // Re-enable strict: false
 			pages: 'docs',
-			assets: 'docs/static',
+			// assets: 'docs/static',
 			fallback: 'index.html',
 			precompress: false
 		}),
