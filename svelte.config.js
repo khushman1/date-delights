@@ -3,20 +3,18 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://kit.svelte.dev/docs/kit/integrations#preprocessors
-	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 
 	kit: {
 		adapter: adapter({
-			strict: false,
+			strict: true,
 			pages: 'docs',
 			assets: 'docs/static',
 			fallback: 'index.html',
 			precompress: false
 		}),
 		paths: {
-			base: process.env.BASE_PATH
+			base: '/date-delights'
 		},
 		prerender: {
 			handleHttpError: 'warn'

@@ -1,7 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
+const base = '/date-delights'; // Hardcoded base path
+
 export default defineConfig({
 	plugins: [sveltekit()],
-	base: process.env.BASE_PATH
+	base: base // Use the hardcoded 'base' variable
 });
