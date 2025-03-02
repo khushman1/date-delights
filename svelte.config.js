@@ -7,7 +7,7 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			strict: true,
+			strict: false, // Re-enable strict: false
 			pages: 'docs',
 			assets: 'docs/static',
 			fallback: 'index.html',
