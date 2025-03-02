@@ -1,24 +1,17 @@
-<script lang="ts">
-	import Header from './Header.svelte';
+<script>
+	import Header from '../routes/Header.svelte';
 	import '../app.css';
-
-	let { children } = $props();
 </script>
 
+<svelte:head>
+	<title>Date Delights</title>
+</svelte:head>
+
 <div class="app">
-    <div class="header-container">
-	    <Header />
-    </div>
-
+    <Header />
 	<main>
-		{@render children()}
+		<slot />
 	</main>
-
-	<footer>
-        <p>
-			This website is about Date Delights.
-		</p>
-	</footer>
 </div>
 
 <style>
@@ -26,14 +19,8 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		overflow-x: hidden;
 	}
-
-    .header-container {
-        width: 100%;
-		max-width: 64rem; /* Same max-width as main content */
-		margin: 0 auto;     /* Center the header */
-        box-sizing: border-box; /* Ensure padding/border within max-width */
-    }
 
 	main {
 		flex: 1;
@@ -46,21 +33,9 @@
 		box-sizing: border-box;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
+    @media (min-width: 640px) {
+        main {
+            padding: 2rem 2rem;
+        }
+    }
 </style>
