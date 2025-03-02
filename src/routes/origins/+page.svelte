@@ -1,5 +1,6 @@
 <script>
     import { fade } from 'svelte/transition'; // Import fade transition
+    import { base } from '$app/paths'; // Import base path
 </script>
 
 <svelte:head>
@@ -16,7 +17,7 @@
     <section class="origins-story">
         <article class="story-section" transition:fade={{ duration: 500 }}> <!-- Apply fade transition -->
             <div class="image-container">
-                <img src="/date-palm-origins-1.jpg" alt="Ancient Date Palm Tree" />
+                <img src="{base}/date-palm-origins-1.jpg" alt="Ancient Date Palm Tree" />
             </div>
             <div class="text-container">
                 <h2>A History Rooted in Antiquity</h2>
@@ -33,7 +34,7 @@
 
         <article class="story-section" transition:fade={{ duration: 500 }}> <!-- Apply fade transition -->
             <div class="image-container">
-                <img src="/ancient-dates-farming.jpg" alt="Ancient Date Palm Cultivation" />
+                <img src="{base}/ancient-dates-farming.jpg" alt="Ancient Date Palm Cultivation" />
             </div>
             <div class="text-container">
                 <h2>Cultivation Across Civilizations</h2>
@@ -48,7 +49,7 @@
 
         <article class="story-section" transition:fade={{ duration: 500 }}> <!-- Apply fade transition -->
             <div class="image-container">
-                <img src="/dates-trade-routes.jpg" alt="Ancient Trade Routes for Dates" />
+                <img src="{base}/dates-trade-routes.jpg" alt="Ancient Trade Routes for Dates" />
             </div>
             <div class="text-container">
                 <h2>Dates and the Spice Routes</h2>
@@ -64,7 +65,7 @@
 
         <article class="story-section" transition:fade={{ duration: 500 }}> <!-- Apply fade transition -->
             <div class="image-container">
-                <img src="/modern-date-farm.jpg" alt="Modern Date Palm Farm" />
+                <img src="{base}/modern-date-farm.jpg" alt="Modern Date Palm Farm" />
             </div>
             <div class="text-container">
                 <h2>Modern Date Cultivation</h2>
@@ -79,7 +80,7 @@
 
         <article class="story-section" transition:fade={{ duration: 500 }}>
             <div class="image-container">
-                <img src="/sustainable-date-farming.jpg" alt="Sustainable Date Farming Practices" />
+                <img src="{base}/sustainable-date-farming.jpg" alt="Sustainable Date Farming Practices" />
             </div>
             <div class="text-container">
                 <h2>Sustainability and Ethical Sourcing Today</h2>

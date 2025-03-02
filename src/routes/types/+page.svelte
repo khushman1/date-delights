@@ -1,5 +1,6 @@
 <script>
     import { fade } from 'svelte/transition';
+    import { base } from '$app/paths'; // Import base path
 </script>
 
 <svelte:head>
@@ -22,7 +23,7 @@
         <article class="date-type-item">
             <h3>Medjool</h3>
             <div class="type-image-container">
-                <img src="/medjool-dates.jpg" alt="Medjool Dates" />
+                <img src="{base}/medjool-dates.jpg" alt="Medjool Dates" />
             </div>
             <p>
                 Known as the "king of dates," Medjool dates are large, soft, and incredibly sweet with a rich, caramel-like flavor. They have a chewy texture and are often enjoyed fresh due to their moistness.
@@ -33,7 +34,7 @@
         <article class="date-type-item">
             <h3>Deglet Noor</h3>
             <div class="type-image-container">
-                <img src="/deglet-noor-dates.jpg" alt="Deglet Noor Dates" />
+                <img src="{base}/deglet-noor-dates.jpg" alt="Deglet Noor Dates" />
             </div>
             <p>
                 Often called the "queen of dates," Deglet Noor dates are less sweet than Medjool and have a firmer, slightly drier texture. They possess a delicate, nutty flavor and are excellent for cooking and baking as they hold their shape well.
@@ -44,7 +45,7 @@
         <article class="date-type-item">
             <h3>Barhi</h3>
             <div class="type-image-container">
-                <img src="/barhi-dates.jpg" alt="Barhi Dates" />
+                <img src="{base}/barhi-dates.jpg" alt="Barhi Dates" />
             </div>
             <p>
                 Barhi dates are unique as they are often eaten in their Khalal stage (yellow and crunchy) as well as fully ripe (Rutab stage - brown and soft).  When ripe, they are very soft, creamy, and intensely sweet with a butterscotch flavor.
@@ -55,7 +56,7 @@
         <article class="date-type-item">
             <h3>Ajwa</h3>
             <div class="type-image-container">
-                <img src="/ajwa-dates.jpg" alt="Ajwa Dates" />
+                <img src="{base}/ajwa-dates.jpg" alt="Ajwa Dates" />
             </div>
             <p>
                 Ajwa dates are a prized variety from Saudi Arabia. They are known for their soft, dark brown to black color and raisin-like texture. They have a moderately sweet and fruity flavor with hints of caramel.

@@ -1,6 +1,7 @@
 <script>
     import { fade } from 'svelte/transition';
     import * as LucideSvelte from 'lucide-svelte';
+    import { base } from '$app/paths'; // Import base path
 
     const benefitIcons = {
         "Rich in Nutrients": LucideSvelte.HeartPulse,

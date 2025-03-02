@@ -3,40 +3,41 @@
     import DateAnimation from '$lib/components/DateAnimation.svelte'; // Import the new component
     import * as LucideSvelte from 'lucide-svelte';
     import ImageCarousel from './ImageCarousel.svelte'; // Import the ImageCarousel component
+    import { base } from '$app/paths'; // Import base path
 
     const categorySummaries = [
         {
             title: 'Health Benefits',
             description: 'Discover the amazing health benefits of dates. Learn how this sweet fruit can boost your well-being.',
-            link: '/health',
+            link: `${base}/health`,
             icon: LucideSvelte.HeartPulse
         },
         {
             title: 'Date Origins',
             description: 'Trace the fascinating history of dates, from ancient civilizations to modern cultivation in India.',
-            link: '/origins',
+            link: `${base}/origins`,
             icon: LucideSvelte.Globe
         },
         {
             title: 'Types of Dates',
             description: 'Explore the diverse world of date varieties. Find out the unique characteristics and uses of each type.',
-            link: '/types',
+            link: `${base}/types`,
             icon: LucideSvelte.ClipboardList
         },
         {
             title: 'Date Recipes',
             description: 'Get inspired with delicious and healthy date recipes. From snacks to desserts, explore the culinary possibilities.',
-            link: '/recipes',
+            link: `${base}/recipes`,
             icon: LucideSvelte.ChefHat
         }
     ];
 
     const dateImages = [
-        '/medjool-dates.jpg',
-        '/ajwa-dates.jpg',
-        '/barhi-dates.jpg',
-        '/deglet-noor-dates.jpg',
-        '/dates-hero.jpg',
+        `${base}/medjool-dates.jpg`,
+        `${base}/ajwa-dates.jpg`,
+        `${base}/barhi-dates.jpg`,
+        `${base}/deglet-noor-dates.jpg`,
+        `${base}/dates-hero.jpg`,
     ];
 </script>
 
@@ -49,7 +50,7 @@
     <div class="hero-container">
         <section class="hero">
             <ImageCarousel images={dateImages} />  <!-- Move the ImageCarousel component here, above the logo -->
-            <img src="/date-delight-logo.png" alt="Date Delights Logo" class="hero-logo-image" />
+            <img src="{base}/date-delight-logo.png" alt="Date Delights Logo" class="hero-logo-image" />
             <p class="subtitle">Your guide to the delicious and nutritious world of dates.</p>
         </section>
     </div>

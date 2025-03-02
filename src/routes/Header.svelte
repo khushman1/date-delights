@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import github from '$lib/images/github.svg'; // Keep github icon for now, or replace
+    import { base } from '$app/paths'; // Import base path
 
 	const navItems = [
-		{ path: '/health', label: 'Health' },
-		{ path: '/origins', label: 'Origins' },
-		{ path: '/types', label: 'Types' },
-		{ path: '/recipes', label: 'Recipes' },
-		{ path: '/about', label: 'About' }, // Keep about page in nav for now
+		{ path: `${base}/health`, label: 'Health' },
+		{ path: `${base}/origins`, label: 'Origins' },
+		{ path: `${base}/types`, label: 'Types' },
+		{ path: `${base}/recipes`, label: 'Recipes' },
+		{ path: `${base}/about`, label: 'About' }, // Keep about page in nav for now
 	];
 
     let mobileMenuOpen = false;
@@ -19,8 +20,8 @@
 
 <header>
 	<div class="corner logo-corner">
-		<a href="/">
-            <img src="/date-delight-logo.png" alt="Date Delights Logo" class="logo-image" />
+		<a href="{base}/">
+            <img src="{base}/date-delight-logo.png" alt="Date Delights Logo" class="logo-image" />
 			<!-- <span class="logo-text">Date Delight</span> -->
 		</a>
 	</div>
@@ -38,8 +39,8 @@
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<ul>
-			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
+			<li aria-current={page.url.pathname === `${base}/` ? 'page' : undefined}>
+				<a href="{base}/">Home</a>
 			</li>
 			{#each navItems as item}
 				<li aria-current={page.url.pathname.startsWith(item.path) ? 'page' : undefined}>
@@ -54,7 +55,7 @@
 
 	<div class="corner github-corner">
 		<a href="https://github.com/khushman1/date-delights">
-			<img src={github} alt="GitHub" />
+			<img src="{github}" alt="GitHub" />
 		</a>
 	</div>
 </header>
