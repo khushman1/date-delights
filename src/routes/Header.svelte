@@ -53,7 +53,7 @@
 	</nav>
 
 	<div class="corner github-corner">
-		<a href="https://github.com/sveltejs/kit">
+		<a href="https://github.com/khushman1/date-delights">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
