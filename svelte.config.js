@@ -10,7 +10,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		paths: {
-			base: process.argv.includes('dev') ? '' : 'date-delights'
+			base: process.argv.includes('dev') ? '' : '/date-delights'
 		}
 	}
 };
