@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { base } from '$app/paths'; // Import base path
 
     let container;
 
@@ -14,9 +15,9 @@
 
 <div class="date-animation-container" bind:this={container}>
     <div class="date-graphic">
-        <img src="/dates-full-icon.png" alt="Date" class="date-piece piece-1" />
-        <img src="/dates-full-icon.png" alt="Date" class="date-piece piece-2" />
-        <img src="/date-icon.png" alt="Date" class="date-piece piece-3" />
+        <img src="{base}/dates-full-icon.png" alt="Date" class="date-piece piece-1" />
+        <img src="{base}/dates-full-icon.png" alt="Date" class="date-piece piece-2" />
+        <img src="{base}/date-icon.png" alt="Date" class="date-piece piece-3" />
     </div>
 </div>
 
