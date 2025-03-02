@@ -9,7 +9,8 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			strict: false
+			strict: false,
+			pages: 'docs'
 		}),
 		paths: {
 			base: process.env.BASE_PATH
