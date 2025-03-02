@@ -26,12 +26,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Show BASE_PATH
-        run: echo "BASE_PATH is set to: $BASE_PATH"
-        shell: bash
-        env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
-
       - name: build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
