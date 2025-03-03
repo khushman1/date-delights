@@ -4,8 +4,8 @@
     import { base } from '$app/paths'; // Import base path
 
 	const navItems = [
-		{ path: `${base}/health`, label: 'Health' },
 		{ path: `${base}/origins`, label: 'Origins' },
+		{ path: `${base}/health`, label: 'Health' },
 		{ path: `${base}/types`, label: 'Types' },
 		{ path: `${base}/recipes`, label: 'Recipes' },
 		{ path: `${base}/about`, label: 'About' }, // Keep about page in nav for now
@@ -193,7 +193,7 @@
         header {
             flex-wrap: wrap; /* Allow header items to wrap on smaller screens */
             padding: 0.5rem 1rem;
-            position: relative;
+            position: relative; /* ADD THIS LINE: Make header relative for mobile nav positioning */
         }
 
         .logo-corner {
