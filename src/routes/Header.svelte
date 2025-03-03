@@ -55,7 +55,7 @@
 
 	<div class="corner github-corner">
 		<a href="https://github.com/khushman1/date-delights">
-			<img src="{github}" alt="GitHub" />
+			<img src={github} alt="GitHub" />
 		</a>
 	</div>
 </header>
@@ -193,7 +193,7 @@
         header {
             flex-wrap: wrap; /* Allow header items to wrap on smaller screens */
             padding: 0.5rem 1rem;
-            position: relative; /* ADD THIS LINE: Make header relative for mobile nav positioning */
+            position: relative;
         }
 
         .logo-corner {
@@ -239,6 +239,19 @@
             height: auto; /* Adjust li height for mobile menu */
             border-bottom: 1px solid var(--color-bg-2); /* Add separator between menu items */
         }
+
+        /* REMOVE ARROW INDICATOR */
+        nav li[aria-current='page']::before {
+            content: none; /* Hide the arrow */
+        }
+
+        /* HIGHLIGHT CURRENT PAGE BACKGROUND */
+        nav li[aria-current='page'] a {
+            background-color: var(--color-bg-2); /* Highlight background */
+            color: var(--color-theme-1); /* Optional: Change text color for contrast */
+            border-radius: 0.5rem; /* Optional: Add rounded corners to highlight */
+        }
+
 
         nav li:last-child {
             border-bottom: none; /* Remove border from last item */
