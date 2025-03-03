@@ -193,6 +193,7 @@
         header {
             flex-wrap: wrap; /* Allow header items to wrap on smaller screens */
             padding: 0.5rem 1rem;
+            position: relative; /* ADD THIS LINE: Make header relative for mobile nav positioning */
         }
 
         .logo-corner {
