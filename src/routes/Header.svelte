@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import github from '$lib/images/github.svg'; // Keep github icon for now, or replace
-    import { base } from '$app/paths'; // Import base path
+	import github from '$lib/images/github.svg';
+    import { base } from '$app/paths';
 
 	const navItems = [
 		{ path: `${base}/origins`, label: 'Origins' },
 		{ path: `${base}/health`, label: 'Health' },
 		{ path: `${base}/types`, label: 'Types' },
 		{ path: `${base}/recipes`, label: 'Recipes' },
-		{ path: `${base}/about`, label: 'About' }, // Keep about page in nav for now
+		{ path: `${base}/about`, label: 'About' },
 	];
 
     let mobileMenuOpen = false;
@@ -16,13 +16,34 @@
     function toggleMobileMenu() {
         mobileMenuOpen = !mobileMenuOpen;
     }
+
+    function closeMobileMenu() {
+        mobileMenuOpen = false;
+    }
+
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        document.addEventListener('click', handleDocumentClick);
+        return () => {
+            document.removeEventListener('click', handleDocumentClick);
+        };
+    });
+
+    function handleDocumentClick(event) {
+        if (mobileMenuOpen) {
+            const navElement = document.querySelector('nav'); // Select nav element directly
+            if (navElement && !navElement.contains(event.target) && !document.querySelector('.mobile-menu-button').contains(event.target)) {
+                closeMobileMenu();
+            }
+        }
+    }
 </script>
 
 <header>
 	<div class="corner logo-corner">
 		<a href="{base}/">
             <img src="{base}/date-delight-logo.png" alt="Date Delights Logo" class="logo-image" />
-			<!-- <span class="logo-text">Date Delight</span> -->
 		</a>
 	</div>
 
@@ -64,42 +85,42 @@
 	header {
 		display: flex;
 		justify-content: space-between;
-		align-items: center; /* Vertically align items in header */
+		align-items: center;
         padding: 0 1rem;
 	}
 
     .logo-corner {
-        margin-left: 0; /* Reset margin for logo corner */
+        margin-left: 0;
     }
 
     .github-corner {
-        margin-right: 0; /* Reset margin for github corner */
+        margin-right: 0;
     }
 
 	.corner {
-		width: auto; /* Adjust width to content */
-		height: auto; /* Adjust height to content */
+		width: auto;
+		height: auto;
 	}
 
 	.corner a {
 		display: flex;
 		align-items: center;
-		justify-content: flex-start; /* Align logo/text to the start */
+		justify-content: flex-start;
 		height: 100%;
-		text-decoration: none; /* Remove underline from logo link */
+		text-decoration: none;
 	}
 
-    .corner a .logo-image { /* Increased specificity here */
-		width: 3em; /* Adjust size as needed */
+    .corner a .logo-image {
+		width: 3em;
 		height: 3em;
 		object-fit: contain;
 	}
 
 	.logo-text {
-		color: var(--color-theme-1); /* Theme color for logo text */
+		color: var(--color-theme-1);
 		font-weight: bold;
-		font-size: 1.5rem; /* Adjust size as needed */
-		margin-left: 0.25rem; /* Spacing between image and text if you use image logo */
+		font-size: 1.5rem;
+		margin-left: 0.25rem;
 	}
 
 
@@ -110,12 +131,12 @@
 	}
 
     .mobile-menu-button {
-        display: none; /* Hide by default on larger screens */
+        display: none;
         background: none;
         border: none;
         padding: 0;
         cursor: pointer;
-        color: var(--color-text); /* Match text color */
+        color: var(--color-text);
     }
 
     .mobile-menu-button svg {
@@ -191,53 +212,53 @@
     /* Mobile Styles */
     @media (max-width: 767px) { /* Mobile devices */
         header {
-            flex-wrap: wrap; /* Allow header items to wrap on smaller screens */
+            flex-wrap: wrap;
             padding: 0.5rem 1rem;
-            position: relative; /* ADD THIS LINE: Make header relative for mobile nav positioning */
+            position: relative;
         }
 
         .logo-corner {
-            flex: 1; /* Allow logo to take up available space */
+            flex: 1;
             margin-left: 0;
         }
 
         .mobile-menu-button {
-            display: block; /* Show menu button on mobile */
+            display: block;
         }
 
         nav {
             position: absolute;
-            top: 100%; /* Position nav below header */
+            top: 100%;
             left: 0;
             width: 100%;
-            background-color: var(--color-bg-1); /* Match header background */
+            background-color: var(--color-bg-1);
             flex-direction: column;
             align-items: stretch;
             padding: 1rem 0;
-            z-index: 10; /* Ensure it's above other content */
-            clip-path: inset(0 0 100% 0); /* Hide nav menu initially */
+            z-index: 10;
+            clip-path: inset(0 0 100% 0);
             transition: clip-path 0.3s ease-out;
         }
 
         nav.mobile-menu-open {
-            clip-path: inset(0 0 0 0); /* Show nav menu when open */
+            clip-path: inset(0 0 0 0);
         }
 
 
         nav svg {
-            display: none; /* Hide svg separators in mobile nav */
+            display: none;
         }
 
         nav ul {
             flex-direction: column;
-            height: auto; /* Adjust height for mobile menu */
-            align-items: flex-start; /* Align menu items to the start */
-            background: none; /* Remove background from ul in mobile nav */
+            height: auto;
+            align-items: flex-start;
+            background: none;
         }
 
         nav li {
-            height: auto; /* Adjust li height for mobile menu */
-            border-bottom: 1px solid var(--color-bg-2); /* Add separator between menu items */
+            height: auto;
+            border-bottom: 1px solid var(--color-bg-2);
         }
 
         /* REMOVE ARROW INDICATOR */
@@ -247,39 +268,39 @@
 
         /* HIGHLIGHT CURRENT PAGE BACKGROUND */
         nav li[aria-current='page'] a {
-            background-color: var(--color-bg-2); /* Highlight background */
-            color: var(--color-theme-1); /* Optional: Change text color for contrast */
-            border-radius: 0.5rem; /* Optional: Add rounded corners to highlight */
+            background-color: var(--color-bg-2);
+            color: var(--color-theme-1);
+            border-radius: 0.5rem;
         }
 
 
         nav li:last-child {
-            border-bottom: none; /* Remove border from last item */
+            border-bottom: none;
         }
 
 
         nav a {
-            padding: 0.75rem 1.5rem; /* Increase padding for mobile menu links */
-            font-size: 1rem; /* Adjust font size for mobile menu links */
-            display: block; /* Make links full width for easier tapping */
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            display: block;
         }
 
         .github-corner {
             margin-right: 0;
-            margin-left: auto; /* Push github icon to the right */
+            margin-left: auto;
         }
     }
 
     /* Tablet Styles (Example - adjust breakpoint as needed) */
     @media (min-width: 768px) and (max-width: 1023px) {
         header {
-            padding: 0.75rem 2rem; /* Slightly larger padding for tablet */
+            padding: 0.75rem 2rem;
         }
         .logo-text {
-            font-size: 1.75rem; /* Slightly larger logo text for tablet */
+            font-size: 1.75rem;
         }
         nav a {
-            padding: 0 0.75rem; /* Slightly larger nav link padding for tablet */
+            padding: 0 0.75rem;
             font-size: 0.9rem;
         }
     }
